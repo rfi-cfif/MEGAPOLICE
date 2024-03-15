@@ -16,7 +16,7 @@ with open('students.csv', encoding='utf-8') as f:
     iid = input()
     while iid != 'СТОП':
         stroka = search(iid, data)
-        if stroka == None:
+        if stroka is None:
             print('Ничего не найдено')
         else:
             print(f'Проект № {iid} делал: {stroka[1]}, он(а) получил(а) оценку - {stroka[-1]}')
