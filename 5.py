@@ -20,12 +20,13 @@ def hash(s):
     return int(hash_value % m)
 
 
-
+# 
 with open('students.csv', encoding='utf-8') as file, \
     open('students_with_hash', 'w', encoding='utf-8',newline='') as new_file:
     data = list(csv.reader(file, delimiter=','))
     res = csv.writer(new_file, delimiter=',')
 
+    # 
     res.writerow(data[0])
     for stroka in data[1:]:
         fio = stroka[1]
