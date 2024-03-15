@@ -7,6 +7,7 @@ with open('students.csv', encoding='utf-8') as f:
 
     # data = sorted(data, key=lambda x: -int(x[4]) if x[4] != 'None' else 0)
 
+    # сортировка вставками
     for i in range(1, len(data)):
         j = i - 1
         data[i][4] = data[i][4] if data[i][4] != 'None' else 0
@@ -19,7 +20,7 @@ with open('students.csv', encoding='utf-8') as f:
     #     print(*i)
     grade = 10
     n = 1
-
+    # вывод лучших
     for stroka in data:
         if stroka[3][:2] == str(grade):
             surname, name, fath = stroka[1].split()

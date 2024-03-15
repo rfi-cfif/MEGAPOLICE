@@ -20,13 +20,13 @@ def hash(s):
     return int(hash_value % m)
 
 
-# 
+# считываем файл students.csv и создаём файл students_with_hash.csv
 with open('students.csv', encoding='utf-8') as file, \
-    open('students_with_hash', 'w', encoding='utf-8',newline='') as new_file:
+    open('students_with_hash.csv', 'w', encoding='utf-8',newline='') as new_file:
     data = list(csv.reader(file, delimiter=','))
     res = csv.writer(new_file, delimiter=',')
 
-    # 
+    # заполняем файл строками из исходного, заменяя id на хэш
     res.writerow(data[0])
     for stroka in data[1:]:
         fio = stroka[1]

@@ -2,12 +2,13 @@ import csv
 
 
 # считываем файл students.csv
-with open('students.csv', encoding='utf-8') as file, open('students_new.csv', 'w', encoding='utf-8', newline='') as new_file:
+with open('students.csv', encoding='utf-8') as file, \
+    open('students_new.csv', 'w', encoding='utf-8', newline='') as new_file:
     data = list(csv.reader(file, delimiter=','))
     res = csv.writer(new_file, delimiter=',')
     print(data[1])
 
-    # ищем чела
+    # ищем необходимого ученика
     chel = 'Хадаров Владимир'
     a = []
     for stroka in data[1:]:
